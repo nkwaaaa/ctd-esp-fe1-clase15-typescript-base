@@ -1,7 +1,7 @@
-import React from "react";
 import { useContext } from "react";
 import { useQuery } from "react-query";
 import { ContextoCategorias } from "../context/ContextoCategorias";
+import { Category } from "../interfaces";
 import { getItemCategories } from "../queries/items.queries";
 import ListadoCategoriasItem from "./ListadoCategoriasItem";
 
@@ -18,7 +18,7 @@ const ListadoCategorias = () => {
 
 	return (
 		<div id="listadoCategorias">
-			{categorias.map((categoria, index) => (
+			{categorias?.map((categoria: Category, index) => (
 				<ListadoCategoriasItem
 					key={index}
 					categoria={categoria}
